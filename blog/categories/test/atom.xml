@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: test | Yuri Subach]]></title>
+  <link href="http://ysubach.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://ysubach.github.io/"/>
+  <updated>2013-05-13T23:02:13+02:00</updated>
+  <id>http://ysubach.github.io/</id>
+  <author>
+    <name><![CDATA[Yuri Subach]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, world!]]></title>
+    <link href="http://ysubach.github.io/blog/2012/11/13/hello-world/"/>
+    <updated>2012-11-13T11:46:00+01:00</updated>
+    <id>http://ysubach.github.io/blog/2012/11/13/hello-world</id>
+    <content type="html"><![CDATA[<p>This is standard blog welcome message.</p>
+
+<p>Just testing how <a href="http://www.octopress.org">Octopress</a> blogging tool
+works. It&rsquo;s really unusual to use <code>rake</code> for adding new posts, <code>vim</code> for
+editing with <code>markdown</code> syntax and use <code>git</code> for pushing changes to
+repository. If you see this post on my web site, then it means all these
+components worked fine and first post is deployed.</p>
+
+<p>In the future I&rsquo;ll possibly write more details about my blogging
+experience with Octopress.</p>
+]]></content>
+  </entry>
+  
+</feed>
