@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ysubach.github.io/sitemap.xml 
+Sitemap: http://yurisubach.com/sitemap.xml 
