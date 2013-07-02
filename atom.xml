@@ -4,7 +4,7 @@
   <title><![CDATA[Yuri Subach]]></title>
   <link href="http://yurisubach.com/atom.xml" rel="self"/>
   <link href="http://yurisubach.com/"/>
-  <updated>2013-05-14T19:30:19+02:00</updated>
+  <updated>2013-07-02T17:31:25+02:00</updated>
   <id>http://yurisubach.com/</id>
   <author>
     <name><![CDATA[Yuri Subach]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Treating files as sets: comm utility]]></title>
+    <link href="http://yurisubach.com/blog/2013/06/28/treating-files-as-sets-comm-utility/"/>
+    <updated>2013-06-28T17:54:00+02:00</updated>
+    <id>http://yurisubach.com/blog/2013/06/28/treating-files-as-sets-comm-utility</id>
+    <content type="html"><![CDATA[<p>Sometimes during administration work with real system you can have a
+simple task: get list of strings and find subset of this list missing in
+other list. Seems to be trivial but if you have thousands of values,
+then it&rsquo;s time to use some automated solution.</p>
+
+<p>Fortunately you don&rsquo;t need to write own program because <code>comm</code> utility
+can do our task perfectly. It analyses 2 files (file1 and file2) as sets of strings and
+allows to get:</p>
+
+<ul>
+<li>lines only in file1;</li>
+<li>lines only in file2;</li>
+<li>and lines in both files.</li>
+</ul>
+
+
+<p>Let us see how it works on a very simple example: <em>file1</em> &ndash; list of
+files archieved yesterday, <em>file2</em> &ndash; list of current files. In order to
+be correctly processed these files must be sorted, it&rsquo;s simple &ndash; run
+<code>$ sort file1 &gt; file1_s</code> and <code>$ sort file2 &gt; file2_s</code>.</p>
+
+<p>Now use <code>comm</code> to get following useful information:</p>
+
+<ul>
+<li><p>list of files deleted today (lines only in file1):</p>
+
+<p><code>
+$ comm -23 file1_s file2_s
+</code></p></li>
+<li><p>list of files added today (lines only in file2):</p>
+
+<p><code>
+$ comm -13 file1_s file2_s
+</code></p></li>
+<li><p>list of files present yesterday and today (lines in file1 and file2):</p>
+
+<p><code>
+$ comm -12 file1_s file2_s
+</code></p></li>
+</ul>
+
+
+<p>Hope it&rsquo;ll be useful in some situations. For more details see <code>man
+comm</code>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello, world!]]></title>
