@@ -3,8 +3,12 @@ layout: default
 ---
 
 <article class="page">
+    <h2 class="title">{{ page.title }}</h2>
     <div class="entry-content">{{ content }}</div>
 </article>
+{% unless page.sharing == false %}
+	{% include post/sharing.html %}
+{% endunless %}
 
 {% if site.disqus_short_name and page.comments == true %}
 <section id="comment">
