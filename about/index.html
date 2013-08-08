@@ -5,13 +5,13 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Seasoned web application developer and system engineer  | Yuri Subach</title>
+	<title>About  | Yuri Subach</title>
 
 <meta name="author" content="Yuri Subach"> 
 
-<meta name="description" content="Sometimes during administration work with real system you can have a
-simple task: get list of strings and find subset of this list missing in
-other &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="My name is Yuri Subach, I am seasoned web application developer and
+system engineer. I live with my family in Podgorica, Montenegro.
+We&rsquo;ve &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -98,145 +98,52 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner">
+	<div id="content" class="inner"><article class="page">
+    <h2 class="title">About</h2>
+    <div class="entry-content"><p>My name is Yuri Subach, I am seasoned web application developer and
+system engineer. I live with my family in Podgorica, Montenegro.
+We&rsquo;ve moved here from our home town Barnaul in Russia just before New
+Year 2013, now we enjoy hot climate and nearby sea and mountains.</p>
 
+<p>This is my personal blog dedicated to professional part of my life. Here
+I publish various thoughts, tips or just share my daily work experience.
+Major publication topics include web developerment, web applications
+performance, distributed systems, high load systems; general Linux
+administration, cloud deployment and usage.
+Another set of topics interesting for me is OS X daily usage
+and developement for iPhone/iPad.</p>
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/28/treating-files-as-sets-comm-utility/">
-		
-			Treating Files as Sets: Comm Utility</a>
-	</h2>
-	<div class="entry-content">
-		<p>Sometimes during administration work with real system you can have a
-simple task: get list of strings and find subset of this list missing in
-other list. Seems to be trivial but if you have thousands of values,
-then it&rsquo;s time to use some automated solution.</p>
-
-<p>Fortunately you don&rsquo;t need to write own program because <code>comm</code> utility
-can do our task perfectly. It analyses 2 files (file1 and file2) as sets of strings and
-allows to get:</p>
+<p>Currently I work fulltime at <a href="http://www.w3-edge.com">W3 Edge</a> and
+provide consulting and development <a href="/services">services</a>.
+If you are interested
+<a href="https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf">download my CV (PDF file)</a>.
+The best ways to contact me are:</p>
 
 <ul>
-<li>lines only in file1;</li>
-<li>lines only in file2;</li>
-<li>and lines in both files.</li>
+<li>Email/iMessage: <em>ysubach at gmail dot com</em></li>
+<li>Skype: <em>ysubach</em></li>
 </ul>
 
 
-<p>Let us see how it works on a very simple example: <em>file1</em> &ndash; list of
-files archieved yesterday, <em>file2</em> &ndash; list of current files. In order to
-be correctly processed these files must be sorted, it&rsquo;s simple &ndash; run
-<code>$ sort file1 &gt; file1_s</code> and <code>$ sort file2 &gt; file2_s</code>.</p>
+<p>or just add me to your social network and send a message. See links to
+my personal profiles below in the web page footer.</p>
+</div>
+</article>
 
-<p>Now use <code>comm</code> to get following useful information:</p>
-
-<ul>
-<li><p>list of files deleted today (lines only in file1):</p>
-
-<p><code>
-$ comm -23 file1_s file2_s
-</code></p></li>
-<li><p>list of files added today (lines only in file2):</p>
-
-<p><code>
-$ comm -13 file1_s file2_s
-</code></p></li>
-<li><p>list of files present yesterday and today (lines in file1 and file2):</p>
-
-<p><code>
-$ comm -12 file1_s file2_s
-</code></p></li>
-</ul>
-
-
-<p>Hope it&rsquo;ll be useful in some situations. For more details see <code>man
-comm</code>.</p>
-
-		
-		
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
 	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-28T17:54:00+02:00" pubdate data-updated="true">Jun 28<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/unix/'>unix</a>
 
 
 </div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/11/13/hello-world/">
-		
-			Hello, World!</a>
-	</h2>
-	<div class="entry-content">
-		<p>This is standard blog welcome message.</p>
-
-<p>Just testing how <a href="http://www.octopress.org">Octopress</a> blogging tool
-works. It&rsquo;s really unusual to use <code>rake</code> for adding new posts, <code>vim</code> for
-editing with <code>markdown</code> syntax and use <code>git</code> for pushing changes to
-repository. If you see this post on my web site, then it means all these
-components worked fine and first post is deployed.</p>
-
-<p>In the future I&rsquo;ll possibly write more details about my blogging
-experience with Octopress.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-13T11:46:00+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/test/'>test</a>
-
-
-</div>
-	
-</div></article>
-
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/archives">Blog Archives</a></div>
-</nav></div>
 	<footer id="footer" class="inner"><a href="http://twitter.com/ysubach">Twitter</a> &bull;
 <a href="http://www.facebook.com/yuri.subach">Facebook</a> &bull;
 <a href="http://www.linkedin.com/pub/yuri-subach/8/ba0/474">Linked in</a> &bull;
