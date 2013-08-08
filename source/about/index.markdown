@@ -21,12 +21,12 @@ Another set of topics interesting for me is OS X daily usage
 and developement for iPhone/iPad.
 
 Currently I work fulltime at [W3 Edge](http://www.w3-edge.com) and
-provide consultancy and development [services](/services).
-If you are interested get my 
-[CV as PDF file](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf).
+provide consulting and development [services](/services).
+If you are interested
+[download my CV (PDF file)](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf).
 The best ways to contact me are:
 
-- Email: _ysubach at gmail dot com_
+- Email/iMessage: _ysubach at gmail dot com_
 - Skype: _ysubach_
 
 or just add me to your social network and send a message. See links to
