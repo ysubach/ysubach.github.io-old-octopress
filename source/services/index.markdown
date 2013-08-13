@@ -41,8 +41,8 @@ then send me a message
 describing your situation (problem or project) to get it resolved
 professionally. **My contact details:**
 
-- Email/iMessage: _ysubach at gmail dot com_
-- Skype: _ysubach_
+- Email/iMessage: <ysubach@gmail.com>
+- Skype: [ysubach](skype:ysubach?chat)
 
 To get more information about experience and technologies
 [download my CV (PDF file)](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf),

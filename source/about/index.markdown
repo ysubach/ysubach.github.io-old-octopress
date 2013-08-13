@@ -26,8 +26,8 @@ If you are interested
 [download my CV (PDF file)](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf).
 The best ways to contact me are:
 
-- Email/iMessage: _ysubach at gmail dot com_
-- Skype: _ysubach_
+- Email/iMessage: <ysubach@gmail.com>
+- Skype: [ysubach](skype:ysubach?chat)
 
 or just add me to your social network and send a message. See links to
 my personal profiles below in the web page footer.
