@@ -5,13 +5,11 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Treating files as sets: comm utility  | Yuri Subach</title>
+	<title>Category: scala  | Yuri Subach</title>
 
 <meta name="author" content="Yuri Subach"> 
 
-<meta name="description" content="Sometimes during administration work with real system you can have a
-simple task: get list of strings and find subset of this list missing in
-other &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Category: scala"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -98,89 +96,28 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Treating Files as Sets: Comm Utility</h2>
-	<div class="entry-content"><p>Sometimes during administration work with real system you can have a
-simple task: get list of strings and find subset of this list missing in
-other list. Seems to be trivial but if you have thousands of values,
-then it&rsquo;s time to use some automated solution.</p>
-
-<p>Fortunately you don&rsquo;t need to write own program because <code>comm</code> utility
-can do our task perfectly. It analyses 2 files (file1 and file2) as sets of strings and
-allows to get:</p>
-
-<ul>
-<li>lines only in file1;</li>
-<li>lines only in file2;</li>
-<li>and lines in both files.</li>
-</ul>
-
-
-<p>Let us see how it works on a very simple example: <em>file1</em> &ndash; list of
-files archieved yesterday, <em>file2</em> &ndash; list of current files. In order to
-be correctly processed these files must be sorted, it&rsquo;s simple &ndash; run
-<code>$ sort file1 &gt; file1_s</code> and <code>$ sort file2 &gt; file2_s</code>.</p>
-
-<p>Now use <code>comm</code> to get following useful information:</p>
-
-<ul>
-<li><p>list of files deleted today (lines only in file1):</p>
-
-<p><code>
-$ comm -23 file1_s file2_s
-</code></p></li>
-<li><p>list of files added today (lines only in file2):</p>
-
-<p><code>
-$ comm -13 file1_s file2_s
-</code></p></li>
-<li><p>list of files present yesterday and today (lines in file1 and file2):</p>
-
-<p><code>
-$ comm -12 file1_s file2_s
-</code></p></li>
-</ul>
-
-
-<p>Hope it&rsquo;ll be useful in some situations. For more details see <code>man
-comm</code>.</p>
-</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-28T17:54:00+02:00" pubdate data-updated="true">Jun 28<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/command-line/'>command line</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/unix/'>unix</a>
-
-
-</div>
+	<div id="content" class="inner">
 	
-</div></article>
 
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
+
 	
 	
-	
-<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	<section class="archives"><h1 class="year">2013</h1>
+
+<article>
+	<h2 class="title"><a href="/blog/2013/10/22/how-to-install-scala-and-sbt-to-ubuntu-12-dot-04-lts/">How to install Scala and sbt to Ubuntu 12.04 LTS</a></h2>
+	<div class="meta">
+		<span class="date">Oct 22</span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/sbt/'>sbt</a>, <a class='category' href='/blog/categories/scala/'>scala</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+
+
+</span>
+	    
 	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
+</article>
 
 </div>
 	<footer id="footer" class="inner"><a href="http://twitter.com/ysubach">Twitter</a> &bull;

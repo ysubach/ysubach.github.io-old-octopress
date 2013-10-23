@@ -4,7 +4,7 @@
   <title><![CDATA[Yuri Subach]]></title>
   <link href="http://yurisubach.com/atom.xml" rel="self"/>
   <link href="http://yurisubach.com/"/>
-  <updated>2013-08-13T22:02:42+02:00</updated>
+  <updated>2013-10-23T13:01:41+02:00</updated>
   <id>http://yurisubach.com/</id>
   <author>
     <name><![CDATA[Yuri Subach]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to install Scala and sbt to Ubuntu 12.04 LTS]]></title>
+    <link href="http://yurisubach.com/blog/2013/10/22/how-to-install-scala-and-sbt-to-ubuntu-12-dot-04-lts/"/>
+    <updated>2013-10-22T18:58:00+02:00</updated>
+    <id>http://yurisubach.com/blog/2013/10/22/how-to-install-scala-and-sbt-to-ubuntu-12-dot-04-lts</id>
+    <content type="html"><![CDATA[<p><a href="http://scala-lang.org">Scala</a>
+is a really nice JVM based programming language. This post
+explains how to install it to Ubuntu 12.04 LTS system. If you don&rsquo;t
+just play with Scala console but want to start a project, then you need
+<a href="http://www.scala-sbt.org/">Simple Build Tool (sbt)</a>
+installed as well.</p>
+
+<p>First of all let&rsquo;s get root priviledges, update packages index and
+install some basic must-have things:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su -
+</span><span class='line'>apt-get update
+</span><span class='line'>apt-get -y install curl git vim</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Install Open JDK 7 and Scala:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install -y openjdk-7-jdk
+</span><span class='line'>apt-get install -y scala</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Test from the command line:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_25"
+</span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2) 
+</span><span class='line'>OpenJDK 64-Bit Server VM (build 23.7-b01, mixed mode)
+</span><span class='line'>
+</span><span class='line'>$ scala
+</span><span class='line'>Welcome to Scala version 2.9.1 (OpenJDK 64-Bit Server VM, Java 1.7.0_25).
+</span><span class='line'>Type in expressions to have them evaluated.
+</span><span class='line'>Type :help for more information.
+</span><span class='line'>
+</span><span class='line'>scala&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you have Scala version 2.9.1, it&rsquo;s not latest but for each project
+you&rsquo;ll have a possibility to install required version through <code>sbt</code>. So
+let&rsquo;s go ahead and install it.</p>
+
+<p>Download and install sbt-0.13:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget
+</span><span class='line'>http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.0/sbt.deb
+</span><span class='line'>--no-verbose
+</span><span class='line'>dpkg -i sbt.deb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you have <code>sbt</code> available from the command line. It&rsquo;s time to return to
+your normal user login because sbt creates separate scala instances
+for each username. Next ask sbt to show scala console: <code>sbt console</code>. It
+will force sbt to download and deploy scala-2.10.2 which is default for
+sbt-0.13.</p>
+
+<p>That&rsquo;s it, enjoy your day with Scala and sbt!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Treating files as sets: comm utility]]></title>
