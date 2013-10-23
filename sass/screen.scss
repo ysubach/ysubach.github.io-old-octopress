@@ -5,3 +5,13 @@
 @import "base";
 @import "parts";
 @import "plugins";
+
+
+figure.code {
+  margin-top: -10px;
+  margin-bottom: 15px;
+
+  table {
+    margin: 0;
+  }
+}

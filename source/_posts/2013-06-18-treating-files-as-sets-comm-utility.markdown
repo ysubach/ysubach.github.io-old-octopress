@@ -3,7 +3,7 @@ layout: post
 title: "Treating files as sets: comm utility"
 date: 2013-06-28 17:54
 comments: true
-categories: [unix, command line] 
+categories: [linux, unix, command line] 
 ---
 Sometimes during administration work with real system you can have a
 simple task: get list of strings and find subset of this list missing in
