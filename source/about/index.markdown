@@ -20,8 +20,9 @@ administration, cloud deployment and usage.
 Another set of topics interesting for me is OS X daily usage 
 and developement for iPhone/iPad.
 
-Currently I work fulltime at [W3 Edge](http://www.w3-edge.com) and
-provide consulting and development [services](/services).
+Currently I
+provide consulting and development [services](/services)
+as a contractor.
 If you are interested
 [download my CV (PDF file)](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf).
 The best ways to contact me are:
