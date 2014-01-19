@@ -4,7 +4,7 @@
   <title><![CDATA[Yuri Subach]]></title>
   <link href="http://yurisubach.com/atom.xml" rel="self"/>
   <link href="http://yurisubach.com/"/>
-  <updated>2013-10-29T13:58:52+01:00</updated>
+  <updated>2014-01-19T20:36:23+01:00</updated>
   <id>http://yurisubach.com/</id>
   <author>
     <name><![CDATA[Yuri Subach]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Eight queens (N-queens) solution in Clojure]]></title>
+    <link href="http://yurisubach.com/blog/2014/01/19/eight-queens-n-queens-solution-in-clojure/"/>
+    <updated>2014-01-19T13:15:00+01:00</updated>
+    <id>http://yurisubach.com/blog/2014/01/19/eight-queens-n-queens-solution-in-clojure</id>
+    <content type="html"><![CDATA[<p>I have been interested in learning functional programming language
+during last months. My current choice is <a href="http://clojure.org/">Clojure</a>
+language because this is a dialect of List based on JVM. So it seems to
+be good candidate for usage in real projects.</p>
+
+<p>Since functional programming requires thinking style
+diffent from imperative languages like PHP, Python or Java I decided to
+try and implement some pure computational task.</p>
+
+<p>&ldquo;Eight queens&rdquo; task is perfect for testing functional programming
+language because solution for this task is recursive. You need to put 8
+queens on the chessboard so that no two queens attack each other. This
+task can be extended to N-sized chessboard, in this case you need to
+place N queens.</p>
+
+<p>My solution in Clojure is written below:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">board-size</span> <span class="mi">8</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">qtest</span> <span class="p">[</span><span class="nv">qcol</span> <span class="nv">qvect</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Test if position `qcol` is okay for addition to `qvect`&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="kd">defn </span><span class="nv">f</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span> <span class="p">(</span><span class="k">let </span><span class="p">[[</span><span class="nv">row</span> <span class="nv">col</span><span class="p">]</span> <span class="nv">x</span><span class="p">]</span>
+</span><span class='line'>                <span class="p">(</span><span class="nf">or</span>
+</span><span class='line'>                  <span class="p">(</span><span class="nb">= </span><span class="nv">qcol</span> <span class="nv">col</span><span class="p">)</span>
+</span><span class='line'>                  <span class="p">(</span><span class="nb">= </span><span class="nv">qcol</span> <span class="p">(</span><span class="nb">- </span><span class="nv">col</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">row</span>  <span class="mi">1</span><span class="p">)))</span>
+</span><span class='line'>                  <span class="p">(</span><span class="nb">= </span><span class="nv">qcol</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">col</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">row</span>  <span class="mi">1</span><span class="p">))))))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">empty?</span> <span class="p">(</span><span class="nb">filter </span><span class="nv">f</span> <span class="p">(</span><span class="nf">map-indexed</span> <span class="nb">vector </span><span class="p">(</span><span class="nb">rseq </span><span class="nv">qvect</span><span class="p">)))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">qsolve</span> <span class="p">[</span><span class="nv">qvect</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Recursively find solution based on initial `qvect` board config&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">p</span> <span class="p">(</span><span class="nb">range </span><span class="nv">board-size</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">qtest</span> <span class="nv">p</span> <span class="nv">qvect</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">qnew</span> <span class="p">(</span><span class="nb">conj </span><span class="nv">qvect</span> <span class="nv">p</span><span class="p">)]</span>
+</span><span class='line'>        <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nb">count </span><span class="nv">qnew</span><span class="p">)</span> <span class="nv">board-size</span><span class="p">)</span> <span class="p">(</span><span class="nb">println </span><span class="nv">qnew</span><span class="p">)</span> <span class="p">(</span><span class="nf">qsolve</span> <span class="nv">qnew</span><span class="p">))))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">qsolve</span> <span class="p">[])</span> <span class="c1">; start solution finding from empty board config</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>How to run this program: if you have Clojure and <a href="http://leiningen.org/">Leiningen</a> installed
+then save this code into <code>eight.clj</code> and run:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">lein</span> <span class="nv">exec</span> <span class="nv">eight.clj</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It will find all solutions and send them to console, one solution per
+line (92 solutions for standard chessboard):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">[</span><span class="mi">0</span> <span class="mi">4</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">6</span> <span class="mi">1</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">0</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">2</span> <span class="mi">6</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mi">4</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">0</span> <span class="mi">6</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">1</span> <span class="mi">4</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">0</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">7</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">4</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">2</span><span class="p">]</span>
+</span><span class='line'><span class="nv">...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Alternatively try to run the code through online execution service:
+<a href="http://www.compileonline.com/execute_clojure_online.php">http://www.compileonline.com/execute_clojure_online.php</a></p>
+
+<p>As result Clojure shows itself as a very expressive language. The same
+conclusion is confirmed by
+<a href="http://www.infoq.com/news/2013/03/Language-Expressiveness">language expressivness study</a>.
+And I hope to continue my journey to the functional programming world :&ndash;)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to install Scala and sbt to Ubuntu 12.04 LTS]]></title>

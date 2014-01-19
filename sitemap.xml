@@ -2,48 +2,54 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://yurisubach.com/blog/2012/11/13/hello-world/</loc>
-        <lastmod>2013-06-25T06:16:39+02:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/blog/2013/06/28/treating-files-as-sets-comm-utility/</loc>
-        <lastmod>2013-10-11T19:00:28+02:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://yurisubach.com/blog/2013/10/22/how-to-install-scala-and-sbt-to-ubuntu-12-dot-04-lts/
         </loc>
-        <lastmod>2013-10-29T13:58:27+01:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://yurisubach.com/blog/2014/01/19/eight-queens-n-queens-solution-in-clojure/
+        </loc>
+        <lastmod>2014-01-19T20:34:01+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/404.html</loc>
-        <lastmod>2013-08-05T12:46:57+02:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/about/</loc>
-        <lastmod>2013-10-27T07:44:10+01:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/archives/</loc>
-        <lastmod>2013-10-29T13:58:27+01:00</lastmod>
+        <lastmod>2014-01-19T20:34:01+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/blog/archives/</loc>
-        <lastmod>2013-10-29T13:58:27+01:00</lastmod>
+        <lastmod>2014-01-19T20:34:01+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/blog/</loc>
-        <lastmod>2013-10-29T13:58:27+01:00</lastmod>
+        <lastmod>2014-01-19T20:34:01+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/</loc>
-        <lastmod>2013-10-29T13:58:27+01:00</lastmod>
+        <lastmod>2014-01-19T20:34:01+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/robots.txt</loc>
-        <lastmod>2013-06-25T06:16:40+02:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://yurisubach.com/services/</loc>
-        <lastmod>2013-08-13T22:02:41+02:00</lastmod>
+        <lastmod>2014-01-19T18:02:13+01:00</lastmod>
     </url>
 </urlset>
