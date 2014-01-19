@@ -14,4 +14,22 @@ figure.code {
   table {
     margin: 0;
   }
+
+  code  {
+    font: 13px monospace;
+    line-height: 13px;
+  }
+
+  td.code {
+    padding-left: 10px;
+  }
+
+  .line-numbers {
+    padding-right: 10px;
+
+    .line-number {
+      font: 13px monospace;
+      line-height: 13px;
+    }
+  }
 }
