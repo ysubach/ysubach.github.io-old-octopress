@@ -7,7 +7,7 @@ categories: [fp, clojure]
 ---
 I have been interested in learning functional programming language 
 during last months. My current choice is [Clojure](http://clojure.org/)
-language because this is a dialect of List based on JVM. So it seems to
+language because this is a dialect of Lisp based on JVM. So it seems to
 be good candidate for usage in real projects. 
 
 Since functional programming requires thinking style
