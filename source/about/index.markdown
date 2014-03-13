@@ -21,6 +21,8 @@ Another set of topics interesting for me is OS X daily usage
 and developement for iPhone/iPad.
 
 Currently I
+work as Senior Software Engineer at [Keycafe, Inc.](http://keycafe.com)
+and 
 provide consulting and development [services](/services)
 as a contractor.
 If you are interested
