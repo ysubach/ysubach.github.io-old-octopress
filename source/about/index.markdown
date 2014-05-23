@@ -21,13 +21,11 @@ Another set of topics interesting for me is OS X daily usage
 and developement for iPhone/iPad.
 
 Currently I
-work as Senior Software Engineer at [Keycafe, Inc.](http://keycafe.com)
-and 
 provide consulting and development [services](/services)
 as a contractor.
 If you are interested
 [download my CV (PDF file)](https://dl.dropboxusercontent.com/u/6383404/YuriSubach.CV.pdf).
-The best ways to contact me are:
+The best ways to contact me:
 
 - Email/iMessage: <ysubach@gmail.com>
 - Skype: [ysubach](skype:ysubach?chat)
