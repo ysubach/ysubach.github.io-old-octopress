@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Yuri Subach]]></title>
+  <link href="http://yurisubach.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://yurisubach.com/"/>
+  <updated>2014-05-28T17:41:20+02:00</updated>
+  <id>http://yurisubach.com/</id>
+  <author>
+    <name><![CDATA[Yuri Subach]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The power of Underscore.js]]></title>
+    <link href="http://yurisubach.com/blog/2014/05/28/the-power-of-underscore-dot-js/"/>
+    <updated>2014-05-28T16:37:00+02:00</updated>
+    <id>http://yurisubach.com/blog/2014/05/28/the-power-of-underscore-dot-js</id>
+    <content type="html"><![CDATA[<p><a href="http://underscorejs.org">Underscore.js</a> is a powerful JavaScript
+library that provides useful functional programming helpers. Why useful?
+Let see in a couple of examples below but in a few words it allows you to
+make your code more clear and compact.</p>
+
+<p>First example is filtering of the list. Let say you have trivial list of
+integer numbers and need to find even ones. I am sure every developer
+knows how to do it using <code>for</code> loop:
+``` javascript
+var numbers = [1, 2, 3, 4, 5, 6];
+var evens = [];
+for (var i = 0; i &lt; numbers.length; i++) {
+  if (numbers[i] % 2 == 0) {</p>
+
+<pre><code>evens.push(numbers[i]);
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>Compare it with implementation using Undescore&rsquo;s <code>filter</code> function:
+<code>javascript
+var numbers = [1, 2, 3, 4, 5, 6];
+var evens = _.filter(numbers, function(num) { return num % 2 == 0; });
+</code></p>
+
+<p>Second example is optimization of the search performed on some list. In
+some situation when you need to repeat array search in a cycle it make
+sense to convert it into hash map. Let&rsquo;s say you have a list of integer
+numbers and you do as usual:
+<code>javascript
+var numbers = [10, 11, 12, 25, 36];
+var map = {};
+for (var i = 0; i &lt; numbers.length; i++) {
+  map[numbers[i]] = numbers[i];
+}
+</code></p>
+
+<p>See how it&rsquo;s trivial with <code>indexBy</code> function:
+<code>javascript
+var numbers = [10, 11, 12, 25, 36];
+var map = _.indexBy(numbers, function(n) { return n; });
+</code></p>
+
+<p>So if you want to write less code to achive result, then Underscore.js
+is your friend :&ndash;) See <a href="http://underscorejs.org">Underscore.js web site</a>
+and learn new useful tricks. Another good source of documentation for
+Undescore and many other libraries is <a href="http://devdocs.io">DevDocs</a></p>
+]]></content>
+  </entry>
+  
+</feed>
