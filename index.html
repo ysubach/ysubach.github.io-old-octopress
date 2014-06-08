@@ -9,9 +9,7 @@
 
 <meta name="author" content="Yuri Subach"> 
 
-<meta name="description" content="Underscore.js is a powerful JavaScript
-library that provides useful functional programming helpers. Why useful?
-Let see in a couple of examples &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Codename: BlueMix (or just BlueMix) is Platform as-a-Service solution created by IBM. It&rsquo;s built on top of SoftLayer IaaS also owned by IBM. &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -99,6 +97,130 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/06/08/how-to-run-simple-node-dot-js-application-on-ibm-bluemix-paas/">
+		
+			How to Run Simple Node.js Application on IBM BlueMix PaaS</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://bluemix.net">Codename: BlueMix</a> (or just BlueMix) is Platform as-a-Service solution created by IBM. It&rsquo;s built on top of SoftLayer IaaS also owned by IBM. BlueMix is opened for beta testing and currently free.</p>
+
+<p>In this post I&rsquo;ll tell you how to create simple Node.js application and link it to the Git repository. As result you&rsquo;ll be able to deploy your application updates to the BlueMix app instance by calling <code>git push</code>. It is very convenient for incremental updates.</p>
+
+<p>Let&rsquo;s start.</p>
+
+<h4>1) Create BlueMix account</h4>
+
+<p>First thing first: go to <a href="http://bluemix.net/">http://bluemix.net/</a> and create free account.</p>
+
+<p>After that login and you&rsquo;ll see <em>BlueMix Dashboard</em> which is similar to my screenshot:</p>
+
+<p><img src="/images/blog-2014/bluemix-nh/create-app.png"></p>
+
+<h4>2) Create new Node.js app</h4>
+
+<p>Click <em>&ldquo;Create an Application&rdquo;</em> button and select <em>&ldquo;Node.js&rdquo;</em> runtime:</p>
+
+<p><img src="/images/blog-2014/bluemix-nh/create-app-popup.png"></p>
+
+<p>Click <em>&ldquo;Create App&rdquo;</em> and choose your app name:</p>
+
+<p><img src="/images/blog-2014/bluemix-nh/create-app-name.png"></p>
+
+<p>Now return to Dashboard and see you app there. Give it some time to be started and once you see green light and &ldquo;running&rdquo; status visit your URL:</p>
+
+<p><a href="http://ys-nodejs-hello.ng.bluemix.net/">http://ys-nodejs-hello.ng.bluemix.net/</a></p>
+
+<p>It will show &ldquo;Welcome to BlueMix!&rdquo; page. Cool!</p>
+
+<h4>3) Link app to Git repository</h4>
+
+<p>Next step is linking to Git repository. Click on your application box and app details. There is <em>&ldquo;Add Git integration&rdquo;</em> link:</p>
+
+<p><img src="/images/blog-2014/bluemix-nh/add-git.png"></p>
+
+<p>It will ask you to create Jazz account, if you here for the first time. As result you&rsquo;ll see:</p>
+
+<p><img src="/images/blog-2014/bluemix-nh/add-git-result.png"></p>
+
+<p>Click &ldquo;Continue&rdquo; and let&rsquo;s move to next step.</p>
+
+<h4>4) Make changes via Git</h4>
+
+<p>Now your application is placed into private Git repository, integrated with BlueMix. You can get this app to your work machine:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://hub.jazz.net/git/ysubach/ys-nodejs-hello
+</span><span class='line'>cd ys-nodejs-hello
+</span><span class='line'>npm install
+</span><span class='line'>node app.js</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now open <a href="http://localhost:3000/">http://localhost:3000/</a> and you should see &ldquo;Welcome to BlueMix!&rdquo; page.</p>
+
+<p>Let&rsquo;s add new cool function to our application, open <code>app.js</code> file in your favorite text editor and add following lines after <code>app.get('/' ...</code> call:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Test works!&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Restart your app using <code>node app.js</code> command and open <a href="http://localhost:3000/test">http://localhost:3000/test</a>](<a href="http://localhost:3000/test">http://localhost:3000/test</a>) URL. If all ok, then you&rsquo;ll see <code>Test works!</code> message.</p>
+
+<p>The final step is very simple. Just commit your changes to Jazz repository and open your BlueMix application URL:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">git</span> <span class="nx">add</span> <span class="nx">app</span><span class="p">.</span><span class="nx">js</span>
+</span><span class='line'><span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="s1">&#39;added /test handler&#39;</span>
+</span><span class='line'><span class="nx">git</span> <span class="nx">push</span> <span class="nx">origin</span> <span class="nx">master</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BlueMix URL for our new function: <a href="http://ys-nodejs-hello.ng.bluemix.net/test">http://ys-nodejs-hello.ng.bluemix.net/test</a></p>
+
+<p>I hope you like it!</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-08T12:34:00+02:00" pubdate data-updated="true">Jun 8<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/bluemix/'>bluemix</a>, <a class='category' href='/blog/categories/ibm/'>ibm</a>, <a class='category' href='/blog/categories/nodejs/'>nodejs</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
