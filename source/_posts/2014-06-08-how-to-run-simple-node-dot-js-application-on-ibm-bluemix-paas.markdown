@@ -67,7 +67,7 @@ app.get('/test', function(req, res) {
 })
 ```
 
-Restart your app using `node app.js` command and open http://localhost:3000/test](http://localhost:3000/test) URL. If all ok, then you'll see `Test works!` message.
+Restart your app using `node app.js` command and open [http://localhost:3000/test](http://localhost:3000/test) URL. If all ok, then you'll see `Test works!` message.
 
 The final step is very simple. Just commit your changes to Jazz repository and open your BlueMix application URL:
 ```
